@@ -21,3 +21,16 @@
     align-items: center;
     gap: 80px;
 }
+
+.btn {
+    margin-top: 14px;
+    text-align: center;
+    color: white;
+    font-size: 13px;
+}
+
+.btn span {
+    color: #1698D9;
+    cursor: pointer;
+    text-decoration: underline dashed;
+}
