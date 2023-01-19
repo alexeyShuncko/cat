@@ -1,13 +1,46 @@
 import s from './Card.module.css';
 import cat from '../images/Photo.png';
+import { useState } from 'react';
 
 const Card = ({ data }) => {
-  let color = data.status === false ? '#1698D9' : '#D91667';
+  const [edit, setEdit] = useState(true);
+
+  if (data.status === 'default' && edit !== true) {
+    setEdit(true);
+  }
+
+  const colorCheck = () => {
+    if (data.status === 'default') {
+      return '#1698D9';
+    } else if (data.status === 'selected') {
+      return '#E52E7A';
+    } else if (data.status === 'disabled') {
+      return '#B3B3B3';
+    }
+  };
+
+  let color = colorCheck();
+
+  const handleLeave = () => {
+    if (data.status === 'selected') {
+      setEdit(false);
+    }
+  };
 
   return (
     <div className={s.cardContainer}>
-      <div className={s.card} style={{ borderColor: color }}>
-        <div className={s.subTitle}>Сказачное заморское яство</div>
+      <div
+        className={s.card}
+        style={{ borderColor: color }}
+        onMouseLeave={handleLeave}>
+        {edit ? (
+          <div className={s.subTitle}>Сказачное заморское яство</div>
+        ) : (
+          <div className={s.subTitle} style={{ color: color }}>
+            Котэ не одобряет?
+          </div>
+        )}
+
         <div className={s.title}>Нямушка</div>
         <div className={s.filling}>{data.filling}</div>
         <div className={s.count}>
@@ -22,6 +55,9 @@ const Card = ({ data }) => {
         </div>
       </div>
       <span className={s.hiddenEl} style={{ borderColor: color }}></span>
+      {data.status === 'disabled' && (
+        <div className={s.shadowEl} onClick={(e) => e.stopPropagation()}></div>
+      )}
     </div>
   );
 };

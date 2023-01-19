@@ -13,7 +13,7 @@ function App() {
       },
       weight: '0,5',
       description: 'Печень утки разварная с артишоками.',
-      status: false,
+      status: 'default',
     },
     {
       filling: 'с рыбой',
@@ -24,7 +24,7 @@ function App() {
       },
       weight: '2',
       description: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
-      status: false,
+      status: 'selected',
     },
     {
       filling: 'с курой',
@@ -35,29 +35,42 @@ function App() {
       },
       weight: '5',
       description: 'Филе цыплят с трюфелями в бульоне.',
-      status: false,
+      status: 'disabled',
     },
   ]);
 
-  console.log(data[0]);
   return (
     <div className={s.container}>
       <div className={s.title}>Ты сегодня покормил кота?</div>
       <div className={s.cardList}>
         {data.map((a, i) => (
-          <div
-            key={a.description}
-            onClick={() => {
-              a.status = !a.status;
-              setData([...data]);
-            }}>
-            <Card data={data[i]} />
-            {a.status === false ? (
+          <div key={a.description}>
+            <div
+              onClick={() => {
+                a.status = a.status === 'selected' ? 'default' : 'selected';
+                setData([...data]);
+              }}>
+              <Card data={data[i]} />
+            </div>
+            {a.status === 'default' && (
               <div className={s.btn}>
-                Чего сидишь? Порадуй котэ, <span>купи.</span>
+                Чего сидишь? Порадуй котэ,{' '}
+                <span
+                  onClick={() => {
+                    a.status = 'selected';
+                    setData([...data]);
+                  }}>
+                  купи.
+                </span>
               </div>
-            ) : (
+            )}
+            {a.status === 'selected' && (
               <div className={s.btn}>{a.description}</div>
+            )}
+            {a.status === 'disabled' && (
+              <div className={s.btn} style={{ color: '#FFFF66' }}>
+                Печалька, {a.filling} закончился.
+              </div>
             )}
           </div>
         ))}
