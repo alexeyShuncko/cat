@@ -1,0 +1,101 @@
+.cardContainer {
+    position: relative;
+    min-width: 320px;
+    min-height: 480px;
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    width: 320px;
+    height: 480px;
+    background: #F2F2F2;
+    border-radius: 12px;
+    border: 4px solid #1698D9;
+    overflow: hidden;
+    clip-path: polygon(16% 0, 80% 0%, 100% 0, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0 11%);
+}
+
+.hiddenEl {
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    border-right: 4px solid #1698D9;
+    transform: rotate(45deg);
+    z-index: 10000;
+}
+
+.subTitle {
+    margin-top: 21px;
+    margin-left: 51px;
+    color: #666666;
+    margin-bottom: 5px;
+}
+
+.title {
+    margin-left: 51px;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.filling {
+    margin-left: 51px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.count {
+    margin-left: 51px;
+    font-weight: 700;
+    color: #666666;
+    font-size: 14px;
+}
+
+.circl {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    height: 80px;
+    width: 80px;
+    background: #1698D9;
+    border-radius: 50%;
+    color: white;
+    font-size: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.circl span:nth-child(1) {
+    line-height: 34px;
+}
+
+.circl span:nth-child(2) {
+    font-size: 21px;
+}
+
+
+.catImg {
+    position: absolute;
+    left: -10%;
+    bottom: -18%;
+}
+
+.btn {
+    margin-top: 14px;
+    text-align: center;
+    color: white;
+    font-size: 13px;
+}
+
+.btn span {
+    color: #1698D9;
+    cursor: pointer;
+    text-decoration: underline dashed;
+}
