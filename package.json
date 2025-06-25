@@ -22,7 +22,7 @@
     "deploy": "gh-pages -d build",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:commit": "eslint --config .eslintrc.commit.json --ext .js,.jsx,.ts,.tsx --max-warnings=0",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

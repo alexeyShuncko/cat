@@ -39,8 +39,6 @@ function App() {
     },
   ]);
 
-  console.log(123);
-
   return (
     <div className={s.container}>
       <div className={s.title}>Ты сегодня покормил кота?</div>
