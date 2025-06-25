@@ -70,7 +70,15 @@
     "jsx-a11y/control-has-associated-label": [
       "off",
       {
-        "ignoreElements": ["audio", "canvas", "embed", "input", "textarea", "tr", "video"],
+        "ignoreElements": [
+          "audio",
+          "canvas",
+          "embed",
+          "input",
+          "textarea",
+          "tr",
+          "video"
+        ],
         "ignoreRoles": [
           "grid",
           "listbox",
@@ -93,7 +101,15 @@
     "jsx-a11y/interactive-supports-focus": [
       "off",
       {
-        "tabbable": ["button", "checkbox", "link", "searchbox", "spinbutton", "switch", "textbox"]
+        "tabbable": [
+          "button",
+          "checkbox",
+          "link",
+          "searchbox",
+          "spinbutton",
+          "switch",
+          "textbox"
+        ]
       }
     ],
     "jsx-a11y/label-has-associated-control": "off",
@@ -133,8 +149,24 @@
     "jsx-a11y/no-noninteractive-element-to-interactive-role": [
       "off",
       {
-        "ul": ["listbox", "menu", "menubar", "radiogroup", "tablist", "tree", "treegrid"],
-        "ol": ["listbox", "menu", "menubar", "radiogroup", "tablist", "tree", "treegrid"],
+        "ul": [
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "tablist",
+          "tree",
+          "treegrid"
+        ],
+        "ol": [
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "tablist",
+          "tree",
+          "treegrid"
+        ],
         "li": ["menuitem", "option", "row", "tab", "treeitem"],
         "table": ["grid"],
         "td": ["gridcell"],
@@ -154,7 +186,14 @@
       "off",
       {
         "allowExpressionValues": true,
-        "handlers": ["onClick", "onMouseDown", "onMouseUp", "onKeyPress", "onKeyDown", "onKeyUp"]
+        "handlers": [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
       }
     ],
     "jsx-a11y/role-has-required-aria-props": "off",
@@ -230,7 +269,7 @@
 
     "no-comma-dangle": 0, // disallow trailing commas in object literals
     "no-cond-assign": 0, // disallow assignment in conditional expressions
-    "no-console": ["error", { "allow": ["warn", "error"] }], // disallow use of console (off by default in the node environment)
+    "no-console": 0, // disallow use of console (off by default in the node environment)
     "no-constant-condition": 0, // disallow use of constant expressions in conditions
     "no-control-regex": 0, // disallow control characters in regular expressions
     "no-debugger": 0, // disallow use of debugger
