@@ -1,28 +1,30 @@
-import s from './Card.module.css';
-import cat from '../images/Photo.png';
-import { useState } from 'react';
+import s from "./Card.module.css";
+import cat from "../images/Photo.png";
+import { useState } from "react";
 
-const Card = ({ data }) => {
+function Card({ data }) {
   const [edit, setEdit] = useState(true);
 
-  if (data.status === 'default' && edit !== true) {
+  if (data.status === "default" && edit !== true) {
     setEdit(true);
   }
 
+  console.log(123);
+
   const colorCheck = () => {
-    if (data.status === 'default') {
-      return '#1698D9';
-    } else if (data.status === 'selected') {
-      return '#E52E7A';
-    } else if (data.status === 'disabled') {
-      return '#B3B3B3';
+    if (data.status === "default") {
+      return "#1698D9";
+    } else if (data.status === "selected") {
+      return "#E52E7A";
+    } else if (data.status === "disabled") {
+      return "#B3B3B3";
     }
   };
 
   let color = colorCheck();
 
   const handleLeave = () => {
-    if (data.status === 'selected') {
+    if (data.status === "selected") {
       setEdit(false);
     }
   };
@@ -32,11 +34,12 @@ const Card = ({ data }) => {
       <div
         className={s.card}
         style={{ borderColor: color }}
-        onMouseLeave={handleLeave}>
+        onMouseLeave={handleLeave}
+      >
         {edit ? (
           <div className={s.subTitle}>Сказачное заморское яство</div>
         ) : (
-          <div className={s.subTitle} style={{ color: color }}>
+          <div className={s.subTitle} style={{ color }}>
             Котэ не одобряет?
           </div>
         )}
@@ -46,7 +49,7 @@ const Card = ({ data }) => {
         <div className={s.count}>
           <div>{data.count.portion}</div>
           <div>{data.count.gift}</div>
-          {data.count.other !== '' && <div>{data.count.other}</div>}
+          {data.count.other !== "" && <div>{data.count.other}</div>}
         </div>
         <img src={cat} alt="Cat" className={s.catImg} />
         <div className={s.circl} style={{ background: color }}>
@@ -54,11 +57,11 @@ const Card = ({ data }) => {
           <span>кг</span>
         </div>
       </div>
-      <span className={s.hiddenEl} style={{ borderColor: color }}></span>
-      {data.status === 'disabled' && (
-        <div className={s.shadowEl} onClick={(e) => e.stopPropagation()}></div>
+      <span className={s.hiddenEl} style={{ borderColor: color }} />
+      {data.status === "disabled" && (
+        <div className={s.shadowEl} onClick={(e) => e.stopPropagation()} />
       )}
     </div>
   );
-};
+}
 export default Card;
