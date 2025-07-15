@@ -1,85 +1,86 @@
-# Slide Show Component Documentation
+# Документация компонента "Слайд-шоу"
 
-## Overview
+## Обзор
 
-The `slideShow` component represents a slideshow content block with multiple images and accompanying text elements. It supports multilingual labels and various content types.
+Компонент `slideShow` представляет собой блок контента для создания слайд-шоу с несколькими изображениями и сопутствующими текстовыми элементами. Поддерживает многоязычные подписи и различные типы контента.
 
-## Structure
+## Структура
 
-### Root Properties
+### Основные свойства
 
-- **label**: Multilingual display name for the component
-  - `en`: "Slide show" (English)
-  - `ru`: "Слайд-шоу" (Russian)
-- **fields**: Array of field definitions that make up the slideshow
-- **canSelect**: `true` (indicates this component can be selected in the UI)
-- **isAutoCreate**: `false` (indicates this component isn't automatically created)
+- **label**: Название компонента на разных языках
+  - `en`: "Slide show" (Английский)
+  - `ru`: "Слайд-шоу" (Русский)
+- **fields**: Массив с определениями полей слайд-шоу
+- **canSelect**: `true` (компонент можно выбирать в интерфейсе)
+- **isAutoCreate**: `false` (компонент не создается автоматически)
 
-## Field Definitions
+## Определения полей
 
-### 1. Caption
+### 1. Заголовок
 
 - **label**:
   - `en`: "Caption"
   - `ru`: "Заголовок"
 - **name**: `caption`
-- **order**: 1 (display order)
-- **type**: `string`
-- **isOptional**: `false` (required field)
-- **max_length**: 35 characters
+- **order**: 1 (порядок отображения)
+- **type**: `string` (строка)
+- **isOptional**: `false` (обязательное поле)
+- **max_length**: 35 символов
 
-### 2. Text
+### 2. Текст
 
 - **label**:
   - `en`: "Text"
   - `ru`: "Текст"
 - **name**: `text`
 - **order**: 2
-- **type**: `stringWithPreviewElement` (rich text with preview capabilities)
-- **fontSize**: 40px
-- **textWidth**: 1350px
-- **fontFamily**: "Montserrat"
-- **fontWeight**: 600 (semibold)
-- **isOptional**: `false` (required)
-- **isUpperCase**: `true` (text will be displayed in uppercase)
-- **max_length**: 550 characters
-- **text_effects**: Array of text styling effects
-  - Color effect #1: `#00a5d3` (light blue)
-  - Color effect #2: `#00DC6B` (green)
+- **type**: `stringWithPreviewElement` (текст с предпросмотром)
+- **fontSize**: 40 (размер шрифта)
+- **textWidth**: 1350 (ширина текстового блока)
+- **fontFamily**: "Montserrat" (шрифт)
+- **fontWeight**: 600 (полужирное начертание)
+- **isOptional**: `false` (обязательное поле)
+- **isUpperCase**: `true` (текст в верхнем регистре)
+- **max_length**: 550 символов
+- **text_effects**: Эффекты текста
+  - Цвет #1: `#00a5d3` (голубой)
+  - Цвет #2: `#00DC6B` (зеленый)
 
-### 3. Text to Speech
+### 3. Озвучка текста
 
 - **label**:
   - `en`: "Text to speech"
-  - `ru`: "Текст в голос"
+  - `ru`: "Озвучка текста"
 - **name**: `text_to_speech`
 - **order**: 3
-- **type**: `speech` (converts text to speech)
-- **max_length**: 28 characters
+- **type**: `speech` (преобразование текста в речь)
+- **max_length**: 28 символов
 
-### 4-6. News Images (1-3)
+### 4-6. Изображения (1-3)
 
 - **name**: `news_image1`, `news_image2`, `news_image3`
-- **order**: 4, 5, 6 respectively
-- **type**: `image`
-- **isOptional**: `false` (all images are required)
-- **max_length**: 250 characters (likely for URL/path length)
+- **order**: 4, 5, 6 соответственно
+- **type**: `image` (изображение)
+- **isOptional**: `false` (обязательные поля)
+- **max_length**: 250 символов
 
-### 7-9. Photo Captions (1-3)
+### 7-9. Подписи к фото (1-3)
 
 - **label**:
-  - `en`: "Photo caption №1", "Photo caption №2", "Photo caption №3"
-  - `ru`: "Подпись к фото №1", "Подпись к фото №2", "Подпись к фото №3"
+  - `en`: "Photo caption №1-3"
+  - `ru`: "Подпись к фото №1-3"
 - **name**: `photoCaption1`, `photoCaption2`, `photoCaption3`
-- **order**: 7, 8, 9 respectively
-- **type**: `string`
-- **isOptional**: `true` (optional fields)
-- **max_length**: 140 characters each
+- **order**: 7, 8, 9 соответственно
+- **type**: `string` (строка)
+- **isOptional**: `true` (необязательные поля)
+- **max_length**: 140 символов
 
-## Usage Notes
+## Особенности использования
 
-1. All image fields (`news_image1-3`) are required
-2. Text content has strict styling applied (uppercase Montserrat semibold)
-3. The component supports bilingual interfaces (English/Russian)
-4. Character limits are strictly enforced for each field
-5. Text supports multiple color effects within the same field
+1. Все три изображения являются обязательными
+2. Основной текст имеет строгое форматирование
+3. Поддержка английского и русского языков
+4. Строгие ограничения по длине для каждого поля
+5. Возможность добавления цветовых эффектов к тексту
+6. Порядок полей определяется свойством `order`
