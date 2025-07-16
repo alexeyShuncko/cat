@@ -93,20 +93,4 @@ awdawd
 
 [Ссылка на раздел "Документы"](./docs/main.md)
 
-```
-{
-  "content#": {
-    "slideShow": {
-      "label": { "en": "Slide show", "ru": "Слайд-шоу" },
-      "fields": [ ... ],
-      "canSelect": true,
-      "isAutoCreate": false
-    }
-  }
-}
-```
-
-| Свойство   | Тип                 | Описание |
-| ---------- | ------------------- | -------- |
-| git add    | Добавить файлы      | awdawd   |
-| git commit | Закрепить изменения | awdawd   |
+[Ссылка на раздел "Документы"](./docs/content.md)
